@@ -18,7 +18,7 @@
 .admin-sidebar .toggle-button {
   position: absolute;
   top: 20px; /* Ajuste del margen superior */
-  right: -45px; /* Ajuste de posición para el botón */
+  right: 19px; /* Ajuste de posición para el botón */
   background-color: #343a40; /* Fondo del botón para que sea visible */
   padding: 10px;
   border-radius: 50%;

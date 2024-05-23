@@ -1,9 +1,15 @@
 import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { Container } from "react-bootstrap";
+
+
 import './Usuarios.css';
 
-const Usuarios = () => {
+
+const Usuarios = ({ isOpen, toggleSidebar }) => {
+
   // Simulamos datos de usuarios
   const usuarios = [
     { id: 1, nombre: 'John Doe', email: 'john.doe@example.com' },
@@ -28,6 +34,10 @@ const Usuarios = () => {
   }, []);
 
   return (
+    <Container fluid className={`dashboard-container ${isOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
+    <div className="toggle-button" onClick={toggleSidebar}>
+      <FontAwesomeIcon icon={faBars} />
+    </div>
     <div className="table-responsive">
       <table className="table table-striped table-bordered table-sm custom-table">
         <thead>
@@ -59,6 +69,7 @@ const Usuarios = () => {
         </tbody>
       </table>
     </div>
+    </Container>
   );
 };
 
