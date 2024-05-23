@@ -197,12 +197,7 @@ const Registro = () => {
             <Button variant="primary" type="submit" className="submit-btn">
               Registrarse
             </Button>
-
-            <div className="text-center mt-3">
-              <Link to="/login" className="btn-link">
-                ¿Ya tienes una cuenta? Inicia sesión
-              </Link>
-            </div>
+            
           </Form>
         </div>
       </div>
