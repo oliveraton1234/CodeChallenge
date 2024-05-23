@@ -1,0 +1,15 @@
+.custom-table th {
+  width: 10%; /* Ancho personalizado para las columnas */
+}
+
+.custom-table td {
+  max-width: 20%; /* Ancho máximo para el contenido de las celdas */
+  overflow: hidden; /* Oculta el contenido que se desborde del ancho máximo */
+  text-overflow: ellipsis; /* Agrega puntos suspensivos (...) cuando el contenido se desborde */
+  white-space: nowrap; /* Evita el salto de línea del contenido */
+}
+
+.table-responsive {
+  max-width: 100%;
+  overflow-x: auto;
+}

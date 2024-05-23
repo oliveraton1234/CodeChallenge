@@ -1,0 +1,36 @@
+.admin-sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Escondido inicialmente */
+  bottom: 0;
+  width: 250px;
+  background-color: #343a40;
+  padding: 20px;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: left 0.3s ease;
+}
+
+.admin-sidebar.open {
+  left: 0;
+}
+
+.admin-sidebar .toggle-button {
+  position: absolute;
+  top: 20px; /* Ajuste del margen superior */
+  right: 20px;
+  z-index: 1100;
+  color: #212529;
+  cursor: pointer;
+}
+
+.admin-sidebar .nav-link {
+  color: #f8f9fa !important;
+  padding: 10px 20px;
+}
+
+.admin-sidebar .nav-link:hover,
+.admin-sidebar .nav-link.active {
+  background-color: #212529;
+  border-radius: 5px;
+}

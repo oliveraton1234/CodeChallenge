@@ -1,0 +1,46 @@
+
+/* src/components/Dashboard.css */
+.dashboard-container {
+  padding: 20px;
+  transition: margin-left 0.3s ease;
+  margin-left: 250px;
+}
+
+.dashboard-container.sidebar-closed {
+  margin-left: 0;
+}
+
+.toggle-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1100;
+  color: #343a40;
+  background-color: #f8f9fa;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card {
+  height: 100%;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card-text {
+  flex-grow: 1;
+}
+
+.btn {
+  margin-top: auto;
+  width: 100%;
+}

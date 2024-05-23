@@ -1,0 +1,17 @@
+.footer {
+    background-color: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.footer-link {
+    text-decoration: none;
+  }
+  
+  .footer-link:hover {
+    text-decoration: underline; /* Si quieres que se subrayen al pasar el ratón por encima */
+  }
+  

@@ -1,0 +1,82 @@
+/* src/components/Login.css */
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.login-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 800px;
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.login-form {
+    width: 100%;
+    max-width: 400px; /* Limita el ancho del formulario */
+    padding: 20px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+}
+
+.login-image {
+    display: none; /* Oculta la imagen por defecto */
+    justify-content: center;
+    align-items: center;
+}
+
+.login-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.password-container {
+    position: relative;
+    margin-bottom: 20px; /* Agrega espacio debajo del campo de contraseña */
+}
+
+.password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Ajusta la posición del icono a la derecha según necesites */
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 1; /* Asegura que esté encima del input de contraseña */
+}
+
+.password-toggle i {
+    cursor: pointer;
+}
+
+.submit-btn {
+    margin-top: 20px;
+}
+
+.btn-link {
+    color: #007bff;
+}
+
+@media (min-width: 768px) {
+    .login-content {
+        flex-direction: row;
+    }
+
+    .login-form {
+        width: 50%;
+        margin-right: 20px; /* Espacio entre el formulario y la imagen en dispositivos grandes */
+    }
+
+    .login-image {
+        display: flex; /* Muestra la imagen en dispositivos medianos y grandes */
+        width: 50%;
+        margin-left: 20px; /* Espacio entre la imagen y el formulario en dispositivos grandes */
+    }
+}
