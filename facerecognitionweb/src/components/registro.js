@@ -1,8 +1,8 @@
 // src/components/Registro.js
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
-import './Registro.css'; // Importa los estilos CSS
+import './Registro.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
@@ -12,23 +12,86 @@ const Registro = () => {
 
   const [formData, setFormData] = useState({
     nombre: '',
+    apellidos: '',
+    telefono: '',
     correo: '',
     contraseña: '',
-    confirmarContraseña: ''
+    confirmarContraseña: '',
   });
+
+  const [capturedImage, setCapturedImage] = useState(null);
+  const [isFaceDetected, setIsFaceDetected] = useState(false);
+  const videoRef = useRef(null);
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const getUserMedia = async () => {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+        videoRef.current.srcObject = stream;
+      } catch (error) {
+        console.error('Error accessing the camera: ', error);
+      }
+    };
+
+    getUserMedia();
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
+  };
+
+  const handleCapture = () => {
+    const context = canvasRef.current.getContext('2d');
+    context.drawImage(videoRef.current, 0, 0, 640, 480);
+    const imageData = canvasRef.current.toDataURL('image/png');
+    setCapturedImage(imageData);
+    detectFace(imageData);
+  };
+
+  const detectFace = async (imageData) => {
+    const apiEndpoint = '<tu_api_endpoint>'; // Coloca aquí tu endpoint de Amazon Rekognition
+    const apiKey = '<tu_api_key>'; // Coloca aquí tu API Key de Amazon Rekognition
+
+    const apiRequest = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-api-key': apiKey,
+      },
+      body: JSON.stringify({
+        imageBase64: imageData.replace('data:image/png;base64,', ''),
+      }),
+    };
+
+    try {
+      const response = await fetch(apiEndpoint, apiRequest);
+      const data = await response.json();
+      console.log('Response from Amazon Rekognition:', data);
+      if (data.FaceDetails && data.FaceDetails.length > 0) {
+        setIsFaceDetected(true);
+      } else {
+        setIsFaceDetected(false);
+      }
+    } catch (error) {
+      console.error('Error calling Amazon Rekognition:', error);
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Aquí puedes manejar la lógica para enviar los datos de registro
-    console.log(formData);
+    if (isFaceDetected) {
+      console.log('Face detected! Ready to submit the form.');
+      console.log(formData);
+      console.log(capturedImage);
+      // Aquí puedes manejar la lógica para enviar los datos de registro junto con la imagen capturada
+    } else {
+      alert('Por favor, capture una imagen con un rostro visible.');
+    }
   };
 
   return (
@@ -44,6 +107,30 @@ const Registro = () => {
                 placeholder="Ingrese su nombre"
                 name="nombre"
                 value={formData.nombre}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formBasicApellidos">
+              <Form.Label>Apellidos</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Ingrese sus apellidos"
+                name="apellidos"
+                value={formData.apellidos}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formBasicTelefono">
+              <Form.Label>Teléfono</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Ingrese su teléfono"
+                name="telefono"
+                value={formData.telefono}
                 onChange={handleChange}
                 required
               />
@@ -92,12 +179,29 @@ const Registro = () => {
               />
             </Form.Group>
 
+            <div className="camera-container">
+              <video ref={videoRef} className="video-feed" autoPlay></video>
+              <Button variant="primary" onClick={handleCapture}>
+                Capturar Foto
+              </Button>
+              <canvas ref={canvasRef} width="640" height="480" style={{ display: 'none' }}></canvas>
+            </div>
+
+            {capturedImage && (
+              <div className="captured-image">
+                <h5>Imagen Capturada:</h5>
+                <img src={capturedImage} alt="captured" />
+              </div>
+            )}
+
             <Button variant="primary" type="submit" className="submit-btn">
               Registrarse
             </Button>
 
             <div className="text-center mt-3">
-              <Link to="/login" className="btn-link">¿Ya tienes una cuenta? Inicia sesión</Link>
+              <Link to="/login" className="btn-link">
+                ¿Ya tienes una cuenta? Inicia sesión
+              </Link>
             </div>
           </Form>
         </div>

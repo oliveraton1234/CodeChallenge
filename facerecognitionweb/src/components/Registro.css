@@ -1,8 +1,11 @@
+/* src/components/Registro.css */
 .registro-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    padding: 20px; /* Agregamos un padding para separación */
+    box-sizing: border-box;
 }
 
 .registro-content {
@@ -16,6 +19,8 @@
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
     padding: 20px;
     box-sizing: border-box;
+    margin-top: 20px; /* Añadimos margen arriba para separación */
+    margin-bottom: 20px; /* Añadimos margen abajo para separación */
 }
 
 .registro-form {
@@ -32,10 +37,6 @@
     z-index: 1;
 }
 
-.password-toggle i {
-    cursor: pointer;
-}
-
 .submit-btn {
     margin-top: 20px;
 }
@@ -44,12 +45,48 @@
     color: #007bff;
 }
 
+.camera-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.video-feed {
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.captured-image {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.captured-image img {
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
 @media (max-width: 768px) {
     .registro-content {
         flex-direction: column;
     }
 
     .registro-form {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .video-feed {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .captured-image img {
         width: 100%;
         max-width: 100%;
     }
