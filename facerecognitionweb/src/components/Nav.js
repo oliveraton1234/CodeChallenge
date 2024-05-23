@@ -11,14 +11,7 @@ const Nav = () => {
     <Navbar bg="dark" variant="dark" expand="lg" className="mb-4">
       <Container>
         <Navbar.Brand as={Link} to="/" className="d-flex align-items-center">
-          <img
-            src={logo}
-            width="80"
-            height="30"
-            className="d-inline-block align-top"
-            alt="Logo"
-          />{" "}
-          Titulo{" "}
+          KARIMNOT{" "}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">

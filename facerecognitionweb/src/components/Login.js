@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Form, Button } from 'react-bootstrap';
 import './Login.css'; // Importa los estilos CSS
-import login from '../images/login.jpg'; // Importa la imagen
+import login from '../images/login.png'; // Importa la imagen
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
