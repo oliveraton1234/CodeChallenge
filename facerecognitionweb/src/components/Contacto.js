@@ -38,9 +38,8 @@ const Contacto = () => {
 
   return (
     <Container className="contacto-container">
-      <h2>Contacto</h2>
       <Row>
-        <Col md={6}>
+        <Col md={{ span: 6, offset: 3 }}>
           <div className="contacto-form">
             <Form onSubmit={handleSubmit}>
               <Form.Group controlId="formBasicName">
@@ -62,20 +61,6 @@ const Contacto = () => {
                 Enviar
               </Button>
             </Form>
-          </div>
-        </Col>
-        <Col md={6}>
-          <div className="contacto-info">
-            <h4>Información de Contacto</h4>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam fermentum odio eu lorem
-              dignissim, sed fermentum est vehicula.
-            </p>
-            <ul>
-              <li><strong>Dirección:</strong> 123 Calle Principal, Ciudad, País</li>
-              <li><strong>Teléfono:</strong> +123 456 7890</li>
-              <li><strong>Correo Electrónico:</strong> info@example.com</li>
-            </ul>
           </div>
         </Col>
       </Row>

@@ -9,8 +9,8 @@ const Footer = () => {
       <Container>
         <Row className="text-center text-md-left">
           <Col md="4" className="mb-4 mb-md-0">
-            <h5>Acerca de Nosotros</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <h5>Ubicación</h5>
+            <p>Alianza 205A interior 4 Jalatlaco, Oaxaca de Juárez, Oaxaca</p>
           </Col>
           <Col md="4" className="mb-4 mb-md-0">
             <h5>Contacto</h5>
@@ -20,10 +20,10 @@ const Footer = () => {
                 href="mailto:info@example.com"
                 className="footer-link text-white"
               >
-                correo@example.com
+                 admin@karimnot.com
               </a>{" "}
               <br />
-              <i className="fas fa-phone mr-2"></i>Télefono: *******
+              <i className="fas fa-phone mr-2"></i>Télefono: (951) 515-85-56
             </p>
           </Col>
           <Col md="4" className="mb-4 mb-md-0">
