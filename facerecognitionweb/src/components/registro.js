@@ -112,13 +112,37 @@ const Registro = () => {
               />
             </Form.Group>
 
-            <Form.Group controlId="formBasicApellidos">
-              <Form.Label>Apellidos</Form.Label>
+            <Form.Group controlId="formBasicApellidoPat">
+              <Form.Label>Apellido Paterno</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Ingrese sus apellidos"
-                name="apellidos"
-                value={formData.apellidos}
+                placeholder="Ingrese su apellido paterno"
+                name="apellido_pat"
+                value={formData.apellido_pat}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formBasicApellidoMat">
+              <Form.Label>Apellidos Materno</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Ingrese su apellido materno"
+                name="apellido_mat"
+                value={formData.apellido_mat}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formBasicCargo">
+              <Form.Label>Cargo</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Ingrese su cargo en la empresa"
+                name="cargo"
+                value={formData.cargo}
                 onChange={handleChange}
                 required
               />
@@ -143,6 +167,18 @@ const Registro = () => {
                 placeholder="Ingrese su correo electrónico"
                 name="correo"
                 value={formData.correo}
+                onChange={handleChange}
+                required
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formBasicDireccion">
+              <Form.Label>Dirección</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Ingrese su dirección"
+                name="apellido_pat"
+                value={formData.direccion}
                 onChange={handleChange}
                 required
               />
@@ -194,10 +230,12 @@ const Registro = () => {
               </div>
             )}
 
+            <div className="button">
             <Button variant="primary" type="submit" className="submit-btn">
               Registrarse
             </Button>
-            
+            </div>
+
           </Form>
         </div>
       </div>
