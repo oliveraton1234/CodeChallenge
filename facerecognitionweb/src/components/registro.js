@@ -234,12 +234,8 @@ const Registro = () => {
             <Button variant="primary" type="submit" className="submit-btn">
               Registrarse
             </Button>
-<<<<<<< HEAD
             </div>
 
-=======
-            
->>>>>>> 1f114de93ccfdfb1ad24ef805d953d94ffc0f8c7
           </Form>
         </div>
       </div>
