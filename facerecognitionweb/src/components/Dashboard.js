@@ -11,6 +11,10 @@ const Dashboard = ({ isOpen, toggleSidebar }) => {
         <FontAwesomeIcon icon={faBars} />
       </div>
       <h1 className="dashboard-title mb-4"></h1>
+
+
+
+      
       <Row>
         <Col md={6} lg={4} className="mb-4">
           <Card>
@@ -21,15 +25,7 @@ const Dashboard = ({ isOpen, toggleSidebar }) => {
             </Card.Body>
           </Card>
         </Col>
-        <Col md={6} lg={4} className="mb-4">
-          <Card>
-            <Card.Body>
-              <Card.Title>Configuración</Card.Title>
-              <Card.Text>Configura las opciones de la aplicación.</Card.Text>
-              <Button variant="primary">Configurar</Button>
-            </Card.Body>
-          </Card>
-        </Col>
+        
         <Col md={12} lg={4} className="mb-4">
           <Card>
             <Card.Body>
