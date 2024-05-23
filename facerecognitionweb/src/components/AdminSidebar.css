@@ -11,10 +11,6 @@
   transition: left 0.3s ease;
 }
 
-.admin-sidebar.open {
-  left: 0;
-}
-
 .admin-sidebar .toggle-button {
   position: absolute;
   top: 20px; /* Ajuste del margen superior */
@@ -33,4 +29,15 @@
 .admin-sidebar .nav-link.active {
   background-color: #212529;
   border-radius: 5px;
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .admin-sidebar {
+    width: 200px; /* Ancho reducido */
+  }
+
+  .admin-sidebar.open {
+    left: 0;
+  }
 }

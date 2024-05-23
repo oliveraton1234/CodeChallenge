@@ -10,36 +10,31 @@ const Dashboard = ({ isOpen, toggleSidebar }) => {
       <div className="toggle-button" onClick={toggleSidebar}>
         <FontAwesomeIcon icon={faBars} />
       </div>
-      <h1 className="dashboard-title mb-4"></h1>
-
-
-
-      
-      <Row>
-        <Col md={6} lg={4} className="mb-4">
-          <Card>
-            <Card.Body>
-              <Card.Title>Usuarios</Card.Title>
-              <Card.Text>Gestiona los usuarios de la aplicación.</Card.Text>
-              <Button variant="primary">Ver usuarios</Button>
-            </Card.Body>
-          </Card>
-        </Col>
-        
-        <Col md={12} lg={4} className="mb-4">
-          <Card>
-            <Card.Body>
-              <Card.Title>Reportes</Card.Title>
-              <Card.Text>Genera reportes y estadísticas.</Card.Text>
-              <Button variant="primary">Generar reportes</Button>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
+      <h1 className="dashboard-title mb-4">Dashboard</h1>
+      <div className="card-wrapper">
+        <Row className="justify-content-center">
+          <Col md={6} lg={4} className="mb-4">
+            <Card>
+              <Card.Body>
+                <Card.Title>Usuarios</Card.Title>
+                <Card.Text>Gestiona los usuarios de la aplicación.</Card.Text>
+                <Button variant="primary">Ver usuarios</Button>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col md={6} lg={4} className="mb-4">
+            <Card>
+              <Card.Body>
+                <Card.Title>Reportes</Card.Title>
+                <Card.Text>Genera reportes y estadísticas.</Card.Text>
+                <Button variant="primary">Generar reportes</Button>
+              </Card.Body>
+            </Card>
+          </Col>
+        </Row>
+      </div>
     </Container>
   );
 };
 
 export default Dashboard;
-
-/* src/components/Dashboard.css */
