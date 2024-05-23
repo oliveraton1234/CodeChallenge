@@ -11,13 +11,21 @@
   transition: left 0.3s ease;
 }
 
+.admin-sidebar.open {
+  left: 0; /* Mostrar el sidebar */
+}
+
 .admin-sidebar .toggle-button {
   position: absolute;
   top: 20px; /* Ajuste del margen superior */
-  right: 20px;
+  right: -45px; /* Ajuste de posición para el botón */
+  background-color: #343a40; /* Fondo del botón para que sea visible */
+  padding: 10px;
+  border-radius: 50%;
   z-index: 1100;
-  color: #212529;
+  color: #f8f9fa; /* Color del ícono */
   cursor: pointer;
+  transition: right 0.3s ease;
 }
 
 .admin-sidebar .nav-link {
@@ -35,6 +43,10 @@
 @media (max-width: 768px) {
   .admin-sidebar {
     width: 200px; /* Ancho reducido */
+  }
+
+  .admin-sidebar .toggle-button {
+    right: -35px; /* Ajuste de posición para el botón */
   }
 
   .admin-sidebar.open {
