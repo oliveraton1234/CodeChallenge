@@ -1,15 +1,22 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Nav from './components/Nav';
-import Footer from './components/Footer';
-import Inicio from './components/Inicio';
-import Login from './components/Login';
-import Registro from './components/Registro';
-import Contacto from './components/Contacto';
-import Dashboard from './components/Dashboard';
-import AdminSidebar from './components/AdminSidebar';
-import Usuarios from './components/Usuarios';
+import React, { useState } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Nav from "./components/Nav";
+import Footer from "./components/Footer";
+import Inicio from "./components/Inicio";
+import Login from "./components/Login";
+import Registro from "./components/Registro";
+import Contacto from "./components/Contacto";
+import Dashboard from "./components/Dashboard";
+import AdminSidebar from "./components/AdminSidebar";
+import Usuarios from "./components/Usuarios";
+import Reportes from "./components/Reportes";
 
 const AppContent = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -19,10 +26,11 @@ const AppContent = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
-  const isDashboard = location.pathname.startsWith('/dashboard');
-  const isAdminUsuarios = location.pathname === '/admin/usuarios';
+  const isDashboard = location.pathname.startsWith("/dashboard");
+  const isAdminUsuarios = location.pathname === "/admin/usuarios";
+  const isAdminReportes = location.pathname === "/admin/reportes";
 
-  const hideNavAndFooter = isDashboard || isAdminUsuarios;
+  const hideNavAndFooter = isDashboard || isAdminUsuarios || isAdminReportes;
 
   return (
     <div className="d-flex flex-column min-vh-100">
@@ -39,18 +47,38 @@ const AppContent = () => {
             element={
               <div className="d-flex">
                 <AdminSidebar isOpen={isSidebarOpen} />
-                <Dashboard isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+                <Dashboard
+                  isOpen={isSidebarOpen}
+                  toggleSidebar={toggleSidebar}
+                />
               </div>
             }
           />
-          <Route 
-            path="/admin/usuarios" 
+          <Route
+            path="/admin/usuarios"
             element={
               <div className="d-flex">
                 <AdminSidebar isOpen={isSidebarOpen} />
-            <Usuarios isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-            </div>} 
+                <Usuarios
+                  isOpen={isSidebarOpen}
+                  toggleSidebar={toggleSidebar}
+                />
+              </div>
+            }
           />
+          <Route
+            path="/admin/reportes"
+            element={
+              <div className="d-flex">
+                <AdminSidebar isOpen={isSidebarOpen} />
+                <Usuarios
+                  isOpen={isSidebarOpen}
+                  toggleSidebar={toggleSidebar}
+                />
+              </div>
+            }
+          />
+          
         </Routes>
       </main>
       {!hideNavAndFooter && <Footer />}
