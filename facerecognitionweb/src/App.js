@@ -20,10 +20,13 @@ const AppContent = () => {
   };
 
   const isDashboard = location.pathname.startsWith('/dashboard');
+  const isAdminUsuarios = location.pathname === '/admin/usuarios'; // Verifica si la ruta es /admin/usuarios
+
+  const hideNavAndFooter = isDashboard || isAdminUsuarios; 
 
   return (
     <div className="d-flex flex-column min-vh-100">
-      {!isDashboard && <Nav />}
+      {!hideNavAndFooter && <Nav />}
       <main className="flex-grow-1">
         <Routes>
           <Route path="/" element={<Navigate to="/inicio" />} />
@@ -33,7 +36,6 @@ const AppContent = () => {
           <Route path="/contacto" element={<Contacto />} />
           <Route
             path="/dashboard/*"
-            
             element={
               <div className="d-flex">
                 <AdminSidebar isOpen={isSidebarOpen} />
@@ -41,10 +43,10 @@ const AppContent = () => {
               </div>
             }
           />
-          <Route path="admin/usuarios" element={<Usuarios />} /> {/* Ruta para Usuarios */}
+          <Route path="/admin/usuarios" element={<Usuarios />} /> {/* Ruta para Usuarios */}
         </Routes>
       </main>
-      {!isDashboard && <Footer />}
+      {!hideNavAndFooter && <Footer />}
     </div>
   );
 };

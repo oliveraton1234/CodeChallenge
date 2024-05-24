@@ -1,3 +1,20 @@
+.dashboard-container {
+  padding-top: 20px;
+  padding-bottom: 60px; /* Ajusta según la altura de tu footer */
+}
+
+.toggle-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  cursor: pointer;
+}
+
+.dashboard-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .custom-table th {
   width: 10%; /* Ancho personalizado para las columnas */
 }

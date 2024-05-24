@@ -35,9 +35,9 @@ const Usuarios = ({ isOpen, toggleSidebar }) => {
 
   return (
     <Container fluid className={`dashboard-container ${isOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
-    <div className="toggle-button" onClick={toggleSidebar}>
-      <FontAwesomeIcon icon={faBars} />
-    </div>
+      <div className="toggle-button" onClick={toggleSidebar}>
+        <FontAwesomeIcon icon={faBars} />
+      </div>
     <div className="table-responsive">
       <table className="table table-striped table-bordered table-sm custom-table">
         <thead>
