@@ -8,11 +8,11 @@ const Usuarios = ({ isOpen, toggleSidebar }) => {
 
   // Simulamos datos de usuarios
   const usuarios = [
-    { id: 1, nombre: 'John Doe', email: 'john.doe@example.com' },
-    { id: 2, nombre: 'Jane Smith', email: 'jane.smith@example.com' },
-    { id: 3, nombre: 'Michael Johnson', email: 'michael.johnson@example.com' },
-    { id: 4, nombre: 'Emma Brown', email: 'emma.brown@example.com' },
-    { id: 5, nombre: 'James Wilson', email: 'james.wilson@example.com' },
+    { id: 1, nombre: 'John', apellidoPaterno: 'Doe', apellidoMaterno: 'Smith', cargo: 'Administrador', telefono: '123-456-7890', email: 'john.doe@example.com', direccion: '123 Main St' },
+    { id: 2, nombre: 'Jane', apellidoPaterno: 'Smith', apellidoMaterno: 'Johnson', cargo: 'Usuario', telefono: '098-765-4321', email: 'jane.smith@example.com', direccion: '456 Elm St' },
+    { id: 3, nombre: 'Michael', apellidoPaterno: 'Johnson', apellidoMaterno: 'Williams', cargo: 'Usuario', telefono: '567-890-1234', email: 'michael.johnson@example.com', direccion: '789 Oak St' },
+    { id: 4, nombre: 'Emma', apellidoPaterno: 'Brown', apellidoMaterno: 'Jones', cargo: 'Moderador', telefono: '234-567-8901', email: 'emma.brown@example.com', direccion: '321 Pine St' },
+    { id: 5, nombre: 'James', apellidoPaterno: 'Wilson', apellidoMaterno: 'Davis', cargo: 'Usuario', telefono: '345-678-9012', email: 'james.wilson@example.com', direccion: '654 Maple St' },
   ];
 
   useEffect(() => {
@@ -39,9 +39,14 @@ const Usuarios = ({ isOpen, toggleSidebar }) => {
         <table className="table table-striped table-bordered table-sm custom-table">
           <thead>
             <tr>
-              <th>id</th>
+              <th>Id</th>
               <th>Nombre</th>
+              <th>Apellido Paterno</th>
+              <th>Apellido Materno</th>
+              <th>Cargo</th>
+              <th>Teléfono</th>
               <th>Email</th>
+              <th>Dirección</th>
               <th className="text-center">Acciones</th>
             </tr>
           </thead>
@@ -50,7 +55,12 @@ const Usuarios = ({ isOpen, toggleSidebar }) => {
               <tr key={usuario.id}>
                 <td>{usuario.id}</td>
                 <td>{usuario.nombre}</td>
+                <td>{usuario.apellidoPaterno}</td>
+                <td>{usuario.apellidoMaterno}</td>
+                <td>{usuario.cargo}</td>
+                <td>{usuario.telefono}</td>
                 <td>{usuario.email}</td>
+                <td>{usuario.direccion}</td>
                 <td className="text-center">
                   <div className="d-flex justify-content-center">
                     <button className="btn btn-primary btn-sm mr-1" title="Editar">
