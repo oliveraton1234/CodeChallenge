@@ -9,7 +9,7 @@ import Registro from './components/Registro';
 import Contacto from './components/Contacto';
 import Dashboard from './components/Dashboard';
 import AdminSidebar from './components/AdminSidebar';
-import Usuarios from './components/Usuarios'; // Importamos el componente Usuarios
+import Usuarios from './components/Usuarios';
 
 const AppContent = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -20,9 +20,9 @@ const AppContent = () => {
   };
 
   const isDashboard = location.pathname.startsWith('/dashboard');
-  const isAdminUsuarios = location.pathname === '/admin/usuarios'; // Verifica si la ruta es /admin/usuarios
+  const isAdminUsuarios = location.pathname === '/admin/usuarios';
 
-  const hideNavAndFooter = isDashboard || isAdminUsuarios; 
+  const hideNavAndFooter = isDashboard || isAdminUsuarios;
 
   return (
     <div className="d-flex flex-column min-vh-100">
@@ -43,7 +43,14 @@ const AppContent = () => {
               </div>
             }
           />
-          <Route path="/admin/usuarios" element={<Usuarios />} /> {/* Ruta para Usuarios */}
+          <Route 
+            path="/admin/usuarios" 
+            element={
+              <div className="d-flex">
+                <AdminSidebar isOpen={isSidebarOpen} />
+            <Usuarios isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+            </div>} 
+          />
         </Routes>
       </main>
       {!hideNavAndFooter && <Footer />}

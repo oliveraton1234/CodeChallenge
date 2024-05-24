@@ -1,12 +1,8 @@
 import React, { useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
-import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faTrash, faBars } from '@fortawesome/free-solid-svg-icons';
 import { Container } from "react-bootstrap";
-
-
 import './Usuarios.css';
-
 
 const Usuarios = ({ isOpen, toggleSidebar }) => {
 
@@ -38,37 +34,38 @@ const Usuarios = ({ isOpen, toggleSidebar }) => {
       <div className="toggle-button" onClick={toggleSidebar}>
         <FontAwesomeIcon icon={faBars} />
       </div>
-    <div className="table-responsive">
-      <table className="table table-striped table-bordered table-sm custom-table">
-        <thead>
-          <tr>
-            <th>id</th>
-            <th>Nombre</th>
-            <th>Email</th>
-            <th className="text-center">Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          {usuarios.map((usuario) => (
-            <tr key={usuario.id}>
-              <td>{usuario.id}</td>
-              <td>{usuario.nombre}</td>
-              <td>{usuario.email}</td>
-              <td className="text-center">
-                <div className="d-flex justify-content-center">
-                  <button className="btn btn-primary btn-sm mr-1" title="Editar">
-                    <FontAwesomeIcon icon={faEdit} />
-                  </button>
-                  <button className="btn btn-danger btn-sm" title="Eliminar">
-                    <FontAwesomeIcon icon={faTrash} />
-                  </button>
-                </div>
-              </td>
+      <h1 className="dashboard-title mb-4">Usuarios</h1>
+      <div className="table-responsive">
+        <table className="table table-striped table-bordered table-sm custom-table">
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th className="text-center">Acciones</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+          </thead>
+          <tbody>
+            {usuarios.map((usuario) => (
+              <tr key={usuario.id}>
+                <td>{usuario.id}</td>
+                <td>{usuario.nombre}</td>
+                <td>{usuario.email}</td>
+                <td className="text-center">
+                  <div className="d-flex justify-content-center">
+                    <button className="btn btn-primary btn-sm mr-1" title="Editar">
+                      <FontAwesomeIcon icon={faEdit} />
+                    </button>
+                    <button className="btn btn-danger btn-sm" title="Eliminar">
+                      <FontAwesomeIcon icon={faTrash} />
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </Container>
   );
 };

@@ -1,6 +1,11 @@
-.dashboard-container {
-  padding-top: 20px;
-  padding-bottom: 60px; /* Ajusta según la altura de tu footer */
+.dashboard-container.sidebar-open {
+  margin-left: 250px; /* Ancho de la barra lateral */
+  transition: margin-left 0.3s;
+}
+
+.dashboard-container.sidebar-closed {
+  margin-left: 0;
+  transition: margin-left 0.3s;
 }
 
 .toggle-button {
@@ -11,9 +16,23 @@
 }
 
 .dashboard-title {
-  text-align: center;
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
+
+.table-responsive {
+  padding-top: 20px;
+}
+
+.custom-table th,
+.custom-table td {
+  white-space: nowrap;
+}
+
+.btn-sm {
+  margin: 0 2px;
+}
+
+
 
 .custom-table th {
   width: 10%; /* Ancho personalizado para las columnas */
