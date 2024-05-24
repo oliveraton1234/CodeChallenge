@@ -7,16 +7,16 @@ import {
   useLocation,
 } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Nav from "./components/Nav";
+import Nav from "./pages/Nav";
 import Footer from "./components/Footer";
-import Inicio from "./components/Inicio";
-import Login from "./components/Login";
-import Registro from "./components/Registro";
-import Contacto from "./components/Contacto";
+import Inicio from "./pages/Inicio";
+import Login from "./pages/Login";
+import Registro from "./pages/Registro";
+import Contacto from "./pages/Contacto";
 import Dashboard from "./components/Dashboard";
 import AdminSidebar from "./components/AdminSidebar";
-import Usuarios from "./components/Usuarios";
-import Reportes from "./components/Reportes";
+import Usuarios from "./pages/Usuarios";
+import Reportes from "./pages/Reportes";
 
 const AppContent = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
