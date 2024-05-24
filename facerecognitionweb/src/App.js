@@ -33,6 +33,7 @@ const AppContent = () => {
           <Route path="/contacto" element={<Contacto />} />
           <Route
             path="/dashboard/*"
+            
             element={
               <div className="d-flex">
                 <AdminSidebar isOpen={isSidebarOpen} />
