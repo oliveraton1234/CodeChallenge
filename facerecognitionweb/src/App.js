@@ -41,7 +41,7 @@ const AppContent = () => {
               </div>
             }
           />
-          <Route path="/usuarios" element={<Usuarios />} /> {/* Ruta para Usuarios */}
+          <Route path="admin/usuarios" element={<Usuarios />} /> {/* Ruta para Usuarios */}
         </Routes>
       </main>
       {!isDashboard && <Footer />}
