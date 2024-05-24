@@ -33,7 +33,7 @@ const Reportes = ({ isOpen, toggleSidebar }) => {
       <div className="toggle-button" onClick={toggleSidebar}>
         <FontAwesomeIcon icon={faBars} />
       </div>
-      <h1 className="dashboard-title mb-4">Reporte43434s</h1>
+      <h1 className="dashboard-title mb-4">Reportes</h1>
       <div className="table-responsive">
         <table className="table table-striped table-bordered table-sm custom-table">
           <thead>

@@ -71,7 +71,7 @@ const AppContent = () => {
             element={
               <div className="d-flex">
                 <AdminSidebar isOpen={isSidebarOpen} />
-                <Usuarios
+                <Reportes
                   isOpen={isSidebarOpen}
                   toggleSidebar={toggleSidebar}
                 />
